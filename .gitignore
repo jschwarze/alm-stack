@@ -1,3 +1,8 @@
+/crowd/atlassian-crowd-2.8.3.tar.gz
+/nexus/nexus-3.0.0-b2015091801-bundle.tar.gz
+/nexus/nexus-installer-3.0.0-m6-unix-archive.tar.gz
+/.idea
+/bitbucket/atlassian-bitbucket-4.0.3-x64.bin
 target/
 pom.xml.tag
 pom.xml.releaseBackup

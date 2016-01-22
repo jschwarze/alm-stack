@@ -1,0 +1,22 @@
+sonarqube:
+  image: "sonarqube:5.2"
+  hostname: sonarqube
+  domainname: service.kiwicloud
+  ports:
+   - "9000:9000"
+  links:
+   - sonar-db:db
+  environment:
+   - SONARQUBE_JDBC_URL=jdbc:postgresql://sonar-db.service.kiwicloud:5432/sonar
+   - SERVICE_NAME=sonarqube
+sonar-db:
+  name: sonar-db
+  image: postgres
+  hostname: sonar-db
+  domainname: service.kiwicloud
+  environment:
+   - SERVICE_NAME=sonar-db
+   - POSTGRES_USER=sonar
+   - POSTGRES_PASSWORD=sonar
+  ports:
+   - "5432:5432"
