@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<mirrors>
+		<mirror>
+			<id>kiwilocal</id>
+			<name>Kiwi Local</name>
+			<url>http://nexus.service.kiwicloud:8081/repository/developer/</url>
+			<mirrorOf>*</mirrorOf>
+		</mirror>
+	</mirrors>
+	<servers>
+		<server>
+			<id>kiwiRepo</id>
+			<username>team</username>
+			<password>kiwiTeamNex</password>
+		</server>
+	</servers>
+	<profiles>
+		<profile>
+			<id>kiwiRepo</id>
+			<repositories>
+				<repository>
+					<id>kiwiRepo</id>
+					<url>https://mvn.kiwigrid.com/nexus/content/groups/public</url>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>kiwiRepo</id>
+					<url>https://mvn.kiwigrid.com/nexus/content/groups/public</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+        	<profile>
+	            <id>sonar</id>
+        	    <activation>
+                	<activeByDefault>true</activeByDefault>
+	            </activation>
+        	    <properties>
+                	<!-- Optional URL to server. Default value is http://localhost:9000 -->
+	                <sonar.host.url>
+        	          http://sonarqube.service.kiwicloud:9000
+                	</sonar.host.url>
+        	    </properties>
+	        </profile>
+	</profiles>
+	<activeProfiles>
+		<!--make the profile active all the time -->
+		<activeProfile>kiwiRepo</activeProfile>
+	</activeProfiles>
+</settings>

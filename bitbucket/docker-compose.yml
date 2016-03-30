@@ -2,8 +2,11 @@ bitbucket:
   image: "docker.kiwigrid.com/bitbucket:4.0.3"
   hostname: bitbucket
   domainname: service.kiwicloud
+  volumes:
+    - /home/bitbucket/volumes/bitbucket/shared:/bitbucket/shared
+  restart: always
   ports:
    - "7990:7990"
+  dns: 192.168.125.152
   environment:
    - SERVICE_NAME=bitbucket
-

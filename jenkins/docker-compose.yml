@@ -1,0 +1,20 @@
+version: '2'
+services:
+  jenkins:
+    build: .
+    image: "alm-jenkins"
+    hostname: jenkins-master
+    restart: always
+    ports:
+      - "8084:8080"
+      - "50000:50000"
+    networks:
+      - alm-net
+    volumes:
+      - jenkins:/var/jenkins_home
+volumes:
+  jenkins:
+    driver: local
+networks:
+  alm-net:
+    driver: bridge

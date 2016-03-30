@@ -1,9 +1,0 @@
-bitbucket:
-  image: "docker.kiwigrid.com/bitbucket:4.0.3"
-  hostname: bitbucket
-  domainname: service.kiwicloud
-  ports:
-   - "7990:7990"
-  environment:
-   - SERVICE_NAME=bitbucket
-

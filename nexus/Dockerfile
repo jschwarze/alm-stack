@@ -2,7 +2,7 @@ FROM java:8
 
 ENV NEXUS_HOME=/opt/nexus
 ENV NEXUS_URL=http://download.sonatype.com/nexus/3/nexus-3.0.0-m7-unix.tar.gz
-WNV NEXUS_FILE=nexus-3.0.0-m7-unix.tar.gz
+ENV NEXUS_FILE=nexus-3.0.0-m7-unix.tar.gz
 ## Use only one of both. The first one
 RUN wget --directory-prefix=/opt/ $NEXUS_URL
 RUN cd /opt/ && tar -xzf /opt/$NEXUS_FILE

@@ -1,11 +1,13 @@
-nexus:
-  #build: .
-  image: docker.kiwigrid.com/nexus:3.0M6
-  hostname: nexus
-  domainname: service.kiwicloud
-  command: run
-  environment:
-    - SERVICE_NAME=nexus
-    - SERVICE_TAGS=alm,maven
-  ports:
-   - "8081:8081"
+version: '2'
+services:
+  nexus:
+    build: .
+    image: docker.kiwigrid.com/nexus:3.0M6
+    hostname: nexus
+    domainname: service.kiwicloud
+    command: run
+    environment:
+      - SERVICE_NAME=nexus
+      - SERVICE_TAGS=alm,maven
+    ports:
+     - "8081:8081"
