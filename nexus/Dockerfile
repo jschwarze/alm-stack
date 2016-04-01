@@ -13,6 +13,6 @@ ENV PATH $PATH:$NEXUS_HOME/bin
 
 WORKDIR $NEXUS_HOME/bin
 ENTRYPOINT ["./nexus"]
-CMD console
+CMD run
 
 EXPOSE 8081
