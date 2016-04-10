@@ -1,7 +1,10 @@
 FROM jenkins:latest
 
 USER root
-RUN apt-get install -y bzip2 npm
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+RUN apt-get install -y bzip2
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
 RUN npm install -g bower grunt-cli
 
 USER jenkins

@@ -27,5 +27,6 @@ create_instance() {
 echo "Creating docker host for build..."
 create_instance
 echo "Deploying all services..."
+cd ..
 docker-compose build
 docker-compose -p alm up -d
